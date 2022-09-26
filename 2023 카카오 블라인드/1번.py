@@ -15,10 +15,6 @@ for term in terms:
 
 privacies = ["2019.01.01 D", "2019.11.15 Z", "2019.08.02 D","2019.07.01 D", "2018.12.28 Z"]
 today = time(today)
-
-# for privacy in privacies:
-#     time_, term = privacy.split()
-#     time_ = time(time_) + terms_new[term]*28
     
 new_ = [time(privacy.split()[0]) + terms_new[privacy.split()[1]]*28 for privacy in privacies]
 for i in range(len(new_)):
