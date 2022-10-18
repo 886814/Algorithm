@@ -13,9 +13,7 @@ if __name__ == "__main__":
     n = int(input())
     primes = find_prime_nums(n)
     length = len(primes)
-    rt = 0
-    cnt = 0
-    sum_ = 0
+    rt,cnt,sum_ = 0,0,0
     for lt in range(length):
         while sum_<n and rt<length:
             sum_ += primes[rt]
