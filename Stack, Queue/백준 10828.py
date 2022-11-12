@@ -1,24 +1,16 @@
 import sys
+from collections import deque
 n = int(input())
-stack = []
+q = deque([])
 for _ in range(n):
     s = sys.stdin.readline().split()
     if len(s) == 2:
-        stack.append(int(s[1]))
+        q.append(int(s[1]))
     elif s[0] == 'pop':
-        if len(stack) == 0:
-            print(-1)
-        else:
-            print(stack.pop())
+        print(q.pop()) if q else print(-1)
     elif s[0] == 'size':
-        print(len(stack))
+        print(len(q))
     elif s[0] == 'empty':
-        if len(stack) == 0:
-            print(1)
-        else:
-            print(0)
+        print(0) if q else print(1)
     elif s[0] == 'top':
-        if len(stack) == 0:
-            print(-1)
-        else:
-            print(stack[-1])
+        print(q[-1]) if q else print(-1)
