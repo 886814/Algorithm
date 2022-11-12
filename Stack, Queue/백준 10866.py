@@ -1,38 +1,20 @@
 import sys
 from collections import deque
 n = int(input())
-queue = deque([])
+q = deque([])
 for _ in range(n):
     s = sys.stdin.readline().split()
     if len(s) == 2:
-        if s[0] == "push_back":
-            queue.append(int(s[1]))
-        else:
-            queue.appendleft(int(s[1]))
+            q.append(int(s[1])) if s[0] == "push_back" else q.appendleft(int(s[1]))
     elif s[0] == 'pop_front':
-        if len(queue) == 0:
-            print(-1)
-        else:
-            print(queue.popleft())
+        print(q.popleft()) if q else print(-1)
     elif s[0] == 'pop_back':
-        if len(queue) == 0:
-            print(-1)
-        else:
-            print(queue.pop())
+        print(q.pop()) if q else print(-1)
     elif s[0] == 'size':
-        print(len(queue))
+        print(len(q))
     elif s[0] == 'empty':
-        if len(queue) == 0:
-            print(1)
-        else:
-            print(0)
+        print(0) if q else print(1)
     elif s[0] == 'front':
-        if len(queue) == 0:
-            print(-1)
-        else:
-            print(queue[0])
+        print(q[0]) if q else print(-1)
     elif s[0] == 'back':
-        if len(queue) == 0:
-            print(-1)
-        else:
-            print(queue[-1])
+        print(q[-1]) if q else print(-1)
