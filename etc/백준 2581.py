@@ -6,7 +6,7 @@ for i in range(2, 101):
         for j in range(i+i, 10001, i):
             if ch[j]:
                 ch[j] = False
-primes = [x for x in range(m,n+1) if ch[x]]
+primes = [x for x in range(m,n+1) if ch[x] and x != 1]
 if primes:
     print(sum(primes))
     print(min(primes))
