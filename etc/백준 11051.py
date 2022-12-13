@@ -1,3 +1,5 @@
+# DP를 이용한 풀이
+
 def bino_coef(n, r):
     cache = [[0 for _ in range(r+1)] for _ in range(n+1)]
 
@@ -14,3 +16,14 @@ def bino_coef(n, r):
 
 n,k = map(int,input().split())
 print(bino_coef(n,k) % 10007)
+
+# 조합 정의 풀이
+
+n,k = map(int,input().split())
+a, b = 1, 1
+for i in range(n,n-k,-1):
+    a *= i
+for j in range(1,k+1):
+    b *= j
+ans = a // b
+print(ans % 10007)
